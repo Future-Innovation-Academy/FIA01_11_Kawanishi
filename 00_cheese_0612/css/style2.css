@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+/* ------------------
+    base layout
+ *------------------ */
+ html{
+    font-size: 62.5%;/* 16px × 62.5% = 10px*/
+    max-width: 1200px;
+    margin:auto;
+    text-align: center;  
+
+    background-color: #fff;
+}
+
+ /* ★★Open Sans これで読み込めてる？ google fontの読み込みしてないから・・・*/
+body{
+    color: #333333;
+    font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif;
+    font-size: 1.6rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    color:#222222;
+    text-decoration: none;
+}
+
+h2{
+    color: #222222;/*デフォルトカラー*/
+    font-weight: bold;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+h3{
+    color: #222222;/*デフォルトカラー*/
+    font-weight: brormal;
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+    line-height: 2.5rem;
+}
+
+
+.detail{
+    color: #222222;/*デフォルトカラー*/
+    font-weight: brormal;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+}
+
+/*container
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+*/  
+
+/* ------------------
+    header
+ *------------------ */
+
+.header-title{
+    position:fixed; /*ヘッダ固定*/
+    top: 0;
+    z-index:100;    /*重なり上位になるように大きい数値を設定*/
+    width: 1200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.title-logo{
+    flex:0.45;
+    text-align: left;
+    min-width: 400px;
+}
+
+nav{
+    margin-left: auto;
+}
+.nav-list{
+    flex:0.55;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+                   /*自動で均等割付になるには*/
+    display: flex; /*1.display:flexの要素が改行不可*/
+    flex-wrap: nowrap; /*1.display:flexの要素が改行不可*/
+    align-items: center;
+    font-size:2.1rem;
+    list-style:none;
+}
+
+.nav-list li{
+    /*コレ*/width:100%;/*2.子要素の幅がすべて統一指定*/
+    padding: 10px;
+}
+
+.hero-image{
+    position: relative;
+    padding-top:150px;  /*ヘッダ固定なのでその分padding（ないと重なる）*/
+    margin-bottom: 60px;
+}
+
+
+.title-text{        /*■absolute使って設定するのは非推奨ということで使わないことに*/
+    position: absolute;
+    padding-top:150px;  /*ヘッダ固定なのでその分padding（ないと重なる、ずれる）*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+}
+
+.title-text-main{ /*■absolute使って設定とセット*/
+    font-size: 3.5rem;
+    font-weight: bold;
+    white-space: nowrap;/*折れ曲がらない*/
+    margin:30px;
+    letter-spacing: 0.3rem;
+}
+
+.title-text-sub{ /*■absolute使って設定とセット*/
+    font-size: 2.5rem;/*折れ曲がらない*/
+    font-weight: normal;
+    white-space: nowrap;
+    letter-spacing: 0.2rem;
+}
+
+.title-text2{
+    background: url("../img/mainbg.png") no-repeat center;
+    height: 400px;
+    margin-top:150px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title-text-main2{
+    font-size: 3.5rem;
+    font-weight: bold;
+    white-space: nowrap;/*折れ曲がらない*/
+    letter-spacing: 0.3rem;
+    padding-top: 170px;
+    margin-bottom: 30px;
+    color:#fff;
+}
+
+.title-text-sub2{ 
+    font-size: 2.5rem;/*折れ曲がらない*/
+    font-weight: normal;
+    white-space: nowrap;
+    padding-bottom: 180px;
+    letter-spacing: 0.2rem;
+    color:#fff;
+}
+
+
+/* ------------------
+    about
+ *------------------ */
+.about-title{
+    color:#ffd61a;
+    padding-top: 150px;/*この2行、ヘッダ固定してナビで飛ばして頭出しするコツ*/
+    margin-top: -150px;
+}
+
+ .about-detail{
+    margin-bottom: 40px;
+}
+
+.about-image-list{
+    /*自動で均等割付になるには*/
+    display: flex; /*1.display:flexの要素が改行不可*/
+    flex-wrap: nowrap; /*1.display:flexの要素が改行不可*/
+    align-items: center;
+    margin-bottom: 60px;               
+}
+
+.about-image-list li{
+    width:100%;/*2.子要素の幅がすべて統一指定*/
+    padding: 0px; /*★切れ目にしろいのが残ってるのがきもいけど、画像のトリミングがいるかな。*/
+}
+
+/* ------------------
+    course
+ *------------------ */
+.course{
+    margin-bottom: 60px;
+    padding-top: 150px;/*この2行、ヘッダ固定してナビで飛ばして頭出しするコツ*/
+    margin-top: -150px;
+}
+
+ .cours-box{
+    /*自動で均等割付になるには*/
+    display: flex; /*1.display:flexの要素が改行不可*/
+    flex-wrap: nowrap; /*1.display:flexの要素が改行不可*/
+    align-items: center;
+}
+
+.cours-box li{
+    width:100%;/*2.子要素の幅がすべて統一指定*/
+    padding: 0px; /*★切れ目にしろいのが残ってるのがきもいけど、画像のトリミングがいるかな。*/
+}
+
+ .course-subtitle{
+    color:#333333;
+    font-size:1.8rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    text-align: left;
+}
+.course-detail{
+    width:430px;
+    padding-left: 50px;
+    color: #333333;
+    font-size:1.6rem;
+    line-height: 2.5rem;
+    text-align: left;
+    font-weight: normal;    
+}
+
+/*
+.cours-detail-box-left{
+    text-align: left;
+}
+*/
+
+.course-subtitle-left{
+    color:#333333;
+    font-size:1.8rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    text-align: left;
+}
+.course-detail-left{
+    width:430px;
+    padding-left: 50px;
+    color:#333333;
+    font-size:1.6rem;
+    line-height: 2.5rem;
+    text-align: left;
+    font-weight: normal;    
+}
+
+
+/* ------------------
+    news
+ *------------------ */
+.news{
+    margin-bottom: 60px;
+    padding-top: 150px;/*この2行、ヘッダ固定してナビで飛ばして頭出しするコツ*/
+    margin-top: -150px;
+}
+.about-title{
+    color:#ffd61a;
+
+}
+
+.news-list{
+    margin: auto;
+    display: flex; /*1.display:flexの要素が改行不可*/
+    flex-wrap: nowrap; /*1.display:flexの要素が改行不可*/
+    align-items: center;
+    width:960px;
+    margin-bottom: 60px;
+}
+
+.news-list li{
+    /*コレ*/width:100%;/*2.子要素の幅がすべて統一指定*/
+    /*padding: 10px;*/
+}
+
+.a-news{
+
+}
+
+.a-news-img{
+    margin-bottom: 30px; 
+}
+
+.a-news-YMD{
+    text-align: left;
+    font-size:1.6rem;
+    margin-bottom: 24px;     
+}
+
+.a-news-detail{
+    text-align: left;
+    font-size:1.6rem;
+    width:300px;    
+    line-height: 2.0rem;
+}
+
+.button-more{
+	display: inline-block;/*marginもpaddingも指定可能*/
+
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    background: #ffd61a;
+	border: 0.1875em solid #fff;
+
+    
+    width: 300px;
+    padding-top: 29px;    /*★とりあえずできたけど、ほかにボタンの高さ中央寄せの良い方法？イマイチ他のがうまくいかなかった。PPTみたいに簡単にできない？*/
+    padding-bottom: 29px;
+
+    cursor: pointer;
+}
+
+.button-more:hover{
+    background: #fff;
+    color: #ffd61a;
+	border: 0.1875em solid #ffd61a;
+}
+
+/* ------------------
+    ACCESS
+ *------------------ */
+.access{
+/*    display: inline-block;/*block text-aline指定不可 inlineblock text-align指定可　(参考)https://saruwakakun.com/html-css/basic/display*/ 
+    margin-bottom: 60px;
+    padding-top: 150px;/*この2行、ヘッダ固定してナビで飛ばして頭出しするコツ*/
+    margin-top: -150px;
+}
+
+.gmap{
+    width: 1200px;
+    margin-bottom: 60px;
+}
+
+.infomation-table{
+    margin: auto;/*テーブル要素を真ん中に テーブルだけ？ここってわがままだな ★どういうこと？*/
+    width:640px;
+    font-size: 1.6rem;
+}
+
+.cell{
+    width: 240px;
+    text-align: left;
+    padding: 15px;  /*こっちだけ設定してみた d-cellもつられて ★他に適したやりかた？*/
+}
+
+.d-cell{
+    width: 400px;
+    text-align: left;
+}
+
+/* ------------------
+    contact
+ *------------------ */
+ .contact{
+/*    display: inline-block;block text-aline指定不可 inlineblock text-align指定可　(参考)https://saruwakakun.com/html-css/basic/display*/
+    margin-bottom: 60px;
+    padding-top: 150px;/*この2行、ヘッダ固定してナビで飛ばして頭出しするコツ*/
+    margin-top: -150px;
+}
+
+.contact-detail{
+    margin-bottom: 30px;
+}
+
+.contact-detail2{
+    margin:auto;
+    margin-bottom: 70px;
+}
+
+.form-table{
+    margin: auto;/*テーブル要素を真ん中に テーブルだけ？ここってわがままだな ★どういうこと？*/
+    width:640px;
+    font-size: 1.4rem;
+
+    text-align: left;
+    border-top: 2px solid#bfbfbf;
+    border-bottom: 2px solid#bfbfbf;
+
+    margin-bottom: 30px;
+}
+
+.form-table th{
+    border-bottom: 2px solid#bfbfbf;
+}
+
+.form-table td{
+    border-bottom: 2px solid#bfbfbf;
+    padding:8px 16px 8px 16px;
+}
+
+.button-send input{
+	display: inline-block;/*marginもpaddingも指定可能*/
+
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    background: #ffd61a;
+	border: 0.1875em solid #fff;
+    
+    width: 300px;
+    padding-top: 29px;    /*★とりあえずできたけど、ほかにボタンの高さ中央寄せの良い方法？イマイチ他のがうまくいかなかった。PPTみたいに簡単にできない？*/
+    padding-bottom: 29px;
+
+    cursor: pointer;
+
+}
+
+.button-send input:hover{
+    background: #fff;
+    color: #ffd61a;
+	border: 0.1875em solid #ffd61a;
+}
+
+ /* ------------------
+    footer
+ *------------------ */
+ .footer{
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: #707070;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+
+
+
